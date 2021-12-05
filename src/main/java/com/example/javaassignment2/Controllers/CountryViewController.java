@@ -1,6 +1,5 @@
 package com.example.javaassignment2.Controllers;
 
-import com.example.javaassignment2.AllCountries;
 import com.example.javaassignment2.ApiResponse;
 import com.example.javaassignment2.Utilities.APIUtility;
 import javafx.fxml.FXML;

@@ -1,12 +1,11 @@
 package com.example.javaassignment2;
 
+import com.example.javaassignment2.Models.CountryPopulation;
 
-import com.example.javaassignment2.Models.AllCountries;
-
-public class ApiResponse {
+public class ApiResponseCountryDetails {
     private Boolean ok;
 
-    private AllCountries body;
+    private CountryPopulation body;
 
     public Boolean getOk() {
         return ok;
@@ -16,11 +15,11 @@ public class ApiResponse {
         this.ok = ok;
     }
 
-    public AllCountries getBody() {
+    public CountryPopulation getBody() {
         return body;
     }
 
-    public void setBody(AllCountries body) {
+    public void setBody(CountryPopulation body) {
         this.body = body;
     }
 }
