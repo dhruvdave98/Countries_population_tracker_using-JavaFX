@@ -1,12 +1,18 @@
 package com.example.javaassignment2.Controllers;
 
 import com.example.javaassignment2.ApiResponseCountryDetails;
+import com.example.javaassignment2.HelloApplication;
 import com.example.javaassignment2.Models.CountryPopulation;
 import com.example.javaassignment2.Utilities.APIUtility;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,6 +53,13 @@ public class CountryDetailsViewController implements Initializable {
         populationLabel.setText(String.valueOf(country.getPopulation()));
         rankingLabel.setText(String.valueOf(country.getRanking()));
         worldShareLabel.setText(String.valueOf(country.getWorldShare()));
+    }
 
+    public void returnToCountries(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("country-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }

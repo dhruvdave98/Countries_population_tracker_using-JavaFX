@@ -1,7 +1,11 @@
 package com.example.javaassignment2.Controllers;
 
 import com.example.javaassignment2.ApiResponse;
+import com.example.javaassignment2.SceneChanger;
 import com.example.javaassignment2.Utilities.APIUtility;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -36,5 +40,15 @@ public class CountryViewController implements Initializable {
         }
 
         countryListView.getItems().addAll(apiResponse.getBody().getCountries());
+
+        moreDetailsButton.disableProperty().bind(
+                Bindings.isNull(countryListView.getSelectionModel().selectedItemProperty())
+        );
+    }
+
+    @FXML
+    private void getCountryDetails(ActionEvent event) throws IOException, InterruptedException {
+        String countryName = countryListView.getSelectionModel().getSelectedItem();
+        SceneChanger.changeScenes(event, "country-details-view.fxml", countryName);
     }
 }

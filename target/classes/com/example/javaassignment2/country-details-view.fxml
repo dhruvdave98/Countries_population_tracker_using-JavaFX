@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.CountryDetailsViewController">
    <children>
       <BorderPane layoutX="32.0" layoutY="51.0" prefHeight="523.0" prefWidth="637.0">
@@ -37,7 +36,7 @@
             </GridPane>
          </center>
          <bottom>
-            <Button fx:id="returnToCountries" mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+            <Button fx:id="returnToCountries" mnemonicParsing="false" onAction="#returnToCountries" text="Button" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
    </children>
