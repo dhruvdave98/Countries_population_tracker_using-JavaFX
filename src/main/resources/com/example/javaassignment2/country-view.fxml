@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.CountryViewController">
    <children>
-      <ListView fx:id="countryListView" layoutX="14.0" layoutY="69.0" onScroll="#getCountryLoaded" prefHeight="390.0" prefWidth="664.0" />
+      <ListView fx:id="countryListView" layoutX="14.0" layoutY="69.0" prefHeight="390.0" prefWidth="664.0" />
       <Button fx:id="moreDetailsButton" layoutX="320.0" layoutY="561.0" mnemonicParsing="false" text="Button" />
       <Label fx:id="msgLabel" layoutX="332.0" layoutY="494.0" text="Label" />
    </children>
