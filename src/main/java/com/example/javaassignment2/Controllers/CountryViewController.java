@@ -4,7 +4,7 @@ import com.example.javaassignment2.ApiResponse;
 import com.example.javaassignment2.SceneChanger;
 import com.example.javaassignment2.Utilities.APIUtility;
 import javafx.beans.binding.Bindings;
-import javafx.beans.binding.BooleanBinding;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,7 +39,7 @@ public class CountryViewController implements Initializable {
             e.printStackTrace();
         }
 
-        countryListView.getItems().addAll(apiResponse.getBody().getCountries());
+        countryListView.getItems().addAll(apiResponse.getBody().getSortedCountry());
 
         moreDetailsButton.disableProperty().bind(
                 Bindings.isNull(countryListView.getSelectionModel().selectedItemProperty())

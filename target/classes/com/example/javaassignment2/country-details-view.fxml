@@ -36,7 +36,7 @@
             </GridPane>
          </center>
          <bottom>
-            <Button fx:id="returnToCountries" mnemonicParsing="false" onAction="#returnToCountries" text="Button" BorderPane.alignment="CENTER" />
+            <Button fx:id="returnToCountries" mnemonicParsing="false" onAction="#returnToCountries" text="List Countries" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
    </children>
