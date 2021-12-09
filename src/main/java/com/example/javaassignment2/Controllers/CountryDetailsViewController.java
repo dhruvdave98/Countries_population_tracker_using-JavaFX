@@ -1,7 +1,7 @@
 package com.example.javaassignment2.Controllers;
 
 import com.example.javaassignment2.ApiResponseCountryDetails;
-import com.example.javaassignment2.HelloApplication;
+import com.example.javaassignment2.Main;
 import com.example.javaassignment2.Models.CountryPopulation;
 import com.example.javaassignment2.Utilities.APIUtility;
 import javafx.event.ActionEvent;
@@ -46,6 +46,12 @@ public class CountryDetailsViewController implements Initializable {
         }
     }
 
+    /**
+     * This method loads the country details into the second scene
+     * @param countryName
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public void loadCountryDetails(String countryName) throws IOException, InterruptedException {
         ApiResponseCountryDetails apiResponseCountryDetails = APIUtility.getCountryDetails(countryName);
         CountryPopulation country = apiResponseCountryDetails.getBody();
@@ -55,8 +61,13 @@ public class CountryDetailsViewController implements Initializable {
         worldShareLabel.setText(String.valueOf(country.getWorldShare()));
     }
 
+    /**
+     * This method is used to redirect to the first scene
+     * @param event
+     * @throws IOException
+     */
     public void returnToCountries(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("country-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("country-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

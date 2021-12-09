@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.CountryDetailsViewController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaassignment2.Controllers.CountryDetailsViewController">
    <children>
-      <BorderPane layoutX="32.0" layoutY="51.0" prefHeight="523.0" prefWidth="637.0">
+      <BorderPane id="background" layoutX="36.0" layoutY="14.0" prefHeight="468.0" prefWidth="629.0">
          <center>
-            <GridPane prefHeight="389.0" prefWidth="539.0">
+            <GridPane id="label" prefHeight="400.0" prefWidth="568.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.5" minWidth="10.0" prefWidth="295.5" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="333.5" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,7 +36,7 @@
             </GridPane>
          </center>
          <bottom>
-            <Button fx:id="returnToCountries" mnemonicParsing="false" onAction="#returnToCountries" text="List Countries" BorderPane.alignment="CENTER" />
+            <Button id="button" fx:id="returnToCountries" mnemonicParsing="false" onAction="#returnToCountries" text="List Countries" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
    </children>

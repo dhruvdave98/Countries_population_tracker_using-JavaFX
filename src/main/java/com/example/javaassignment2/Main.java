@@ -1,24 +1,27 @@
 package com.example.javaassignment2;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.util.Objects;
 
-public class Main {
-
-    public static void main(String[] args) throws IOException, InterruptedException {
-        String countryName = "Mexico";
-        countryName = countryName.trim().replace(" ", "%20");
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://world-population.p.rapidapi.com/population?country_name="+countryName))
-                .header("x-rapidapi-host", "world-population.p.rapidapi.com")
-                .header("x-rapidapi-key", "5a22e250e7msh5ef0a18e291df53p16a835jsn7951646be950")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+public class Main extends Application {
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("country-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Select Country");
+        Image img = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icon.png")));
+        stage.getIcons().add(img);
+        stage.setScene(scene);
+        stage.show();
     }
 
+    public static void main(String[] args) {
+        launch();
+    }
 }

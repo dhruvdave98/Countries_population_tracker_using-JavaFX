@@ -12,6 +12,12 @@ import java.net.http.HttpResponse;
 
 
 public class APIUtility {
+    /**
+     * This method is used to return the list of the countries into the listView in first scene
+     * @return
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static ApiResponse getAllCountriesFromOMDB() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://world-population.p.rapidapi.com/allcountriesname"))
@@ -36,6 +42,13 @@ public class APIUtility {
         return apiResponse;
     }
 
+    /**
+     * This method is used to return the details of that country according to the selection in the first scene
+     * @param countryName
+     * @return
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static ApiResponseCountryDetails getCountryDetails(String countryName) throws IOException, InterruptedException {
         countryName = countryName.trim().replace(" ", "%20");
         HttpRequest request = HttpRequest.newBuilder()

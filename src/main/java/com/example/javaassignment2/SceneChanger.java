@@ -10,8 +10,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneChanger {
+    /**
+     * This method is used to change the scene from 1st scene to 2nd scene
+     * @param event
+     * @param fxmlFile
+     * @param countryName
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static void changeScenes(ActionEvent event, String fxmlFile, String countryName) throws IOException, InterruptedException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlFile));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
         Scene scene = new Scene(fxmlLoader.load());
 
         CountryDetailsViewController controller = fxmlLoader.getController();

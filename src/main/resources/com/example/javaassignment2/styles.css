@@ -1,0 +1,25 @@
+.root{
+    -fx-background-color: #CCCCFF;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 15px;
+}
+
+#header{
+    -fx-font-size: 30px;
+    -fx-text-fill: #6495ED;
+}
+
+#button{
+    -fx-background-color: #CDDC39;
+    -fx-font-size: 25px;
+    -fx-border-radius: 20px;
+}
+
+#label{
+    -fx-font-size: 20px;
+    -fx-padding: 10px;
+}
+
+#background{
+    -fx-background-color: #FAEBD7;
+}
